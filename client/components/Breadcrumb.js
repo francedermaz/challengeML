@@ -1,6 +1,8 @@
+import styles from "../styles/Breadcrumb.module.scss";
+
 export default function Breadcrumb({categories}) {
   return (
-    <div>
+    <div className={styles.breadcrumb}>
       {categories?.map((item, index) => {
         return (
           <div key={index}>

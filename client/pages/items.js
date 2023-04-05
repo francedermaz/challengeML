@@ -1,7 +1,9 @@
 import { useRouter } from "next/router";
-import searchHandler from "../api/items";
+import { searchHandler } from "../api/items";
 import { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
+import styles from "../styles/Items.module.scss";
+import Card from "../components/Card";
 
 export default function Items() {
   const router = useRouter();
@@ -21,17 +23,17 @@ export default function Items() {
   }
 
   return (
-    <div>
+    <div className={styles.content}>
       <Breadcrumb categories={searchResults.categories} />
       <ul>
-        {searchResults?.items?.map((item) => (
-          <li key={item.id}>
-            <img src={item.image} alt={item.title} />
-            <h2>{item.title}</h2>
-            <p>
-              {item.price.currency} {item.price.amount}
-            </p>
-          </li>
+        {searchResults?.items?.slice(0, 4).map((item) => (
+          <Card
+            id={item.id}
+            title={item.title}
+            price={item.price}
+            picture={item.picture}
+            freeShipping={item.free_shipping}
+          />
         ))}
       </ul>
     </div>
