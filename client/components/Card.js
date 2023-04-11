@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Card.module.scss";
 
-export default function Card({ id, title, price, picture, freeShipping }) {
+export default function Card({ id, title, price, picture, location, freeShipping }) {
   return (
     <Link href={`/items/${id}`}>
       <div className={styles.card}>
@@ -9,21 +9,27 @@ export default function Card({ id, title, price, picture, freeShipping }) {
           <img src={picture} alt={title} />
         </div>
         <div className={styles.detailsContainer}>
-          <div className={styles.priceContainer}>
-            <span className={styles.currency}>{price.currency}</span>
-            <span className={styles.amount}>{price.amount}</span>
-            {price.decimals > 0 && (
+          <div className={styles.priceNameContainer}>
+            <div className={styles.priceContainer}>
+              <span className={styles.amount}>$ {price.amount}</span>
+              {/* {price.decimals > 0 && (
               <span className={styles.decimals}>{price.decimals}</span>
-            )}
-            {freeShipping && (
-              <img
-                src="/assets/ic_shipping.png"
-                alt="Envío gratis"
-                className={styles.freeShippingIcon}
-              />
-            )}
+            )} */}
+              {freeShipping && (
+                <div className={styles.freeShippingIconContainer}>
+                  <img
+                    src="/assets/shipping.png"
+                    alt="Free shipping"
+                    className={styles.freeShippingIcon}
+                  />
+                </div>
+              )}
+            </div>
+            <h2 className={styles.title}>{title}</h2>
           </div>
-          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.shipping}>
+            <span className={styles.location}>{location}</span>
+          </div>
         </div>
       </div>
     </Link>

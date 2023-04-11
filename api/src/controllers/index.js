@@ -34,6 +34,7 @@ async function getSearchResult(query) {
         },
         picture: item.thumbnail,
         condition: item.condition,
+        location: item.address.state_name,
         free_shipping: item.shipping.free_shipping,
       };
     }),
@@ -45,7 +46,7 @@ async function getItemById(id) {
     axios.get(`${API_BASE_URL}items/${id}`),
     axios.get(`${API_BASE_URL}items/${id}/description`),
   ]);
-  
+
   return {
     author: {
       name: "",
@@ -70,5 +71,5 @@ async function getItemById(id) {
 
 module.exports = {
   getSearchResult,
-  getItemById
-}
+  getItemById,
+};

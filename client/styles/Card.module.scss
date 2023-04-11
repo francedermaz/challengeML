@@ -1,61 +1,92 @@
 .card {
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
-    display: flex;
-    align-items: center;
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
-    border-bottom: 1px solid rgb(224, 224, 224);
-  
-    &__image {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px solid rgb(224, 224, 224);
+
+  .imageContainer {
+    width: 180px;
+    margin: 16px 16px 16px 16px;
+
+    img {
       width: 180px;
-  
-      img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
+      height: 180px;
+      border-radius: 4px;
+      object-fit: cover;
     }
-  
-    &__content {
-      flex: 1;
-      padding: 16px;
-  
-      &__header {
-        margin-bottom: 16px;
-  
-        h2 {
-          color: #333333;
-          font-size: 18px;
-          font-weight: 600;
-          margin-bottom: 8px;
-        }
-  
-        &__price {
+  }
+
+  .detailsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    padding-top: 2.25em;
+
+    .title {
+      margin-bottom: 16px;
+      margin-top: 20px;
+      color: #333333;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .priceNameContainer {
+      width: 20em;
+      .priceContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        .currency {
           color: #999999;
           font-size: 14px;
           font-weight: 400;
         }
-      }
-  
-      &__details {
-        margin-top: 16px;
-        color: #666666;
-        font-size: 14px;
-        font-weight: 400;
-  
-        &__shipping {
-          margin-right: 8px;
-  
-          img {
-            width: 16px;
-            height: 16px;
-            margin-right: 4px;
+
+        .amount {
+          color: #333333;
+          font-size: 24px;
+          font-weight: 600;
+        }
+
+        .decimals {
+          color: #999999;
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        .freeShippingIconContainer {
+          background-color: #18d65c;
+          margin-top: 2px;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .freeShippingIcon {
+            width: 10px;
+            height: 10px;
+
+            img {
+              height: 100%;
+            }
           }
         }
       }
     }
+    .shipping{
+      .location{
+        min-width: 5em;
+        font-size: 12px;
+        color: #666666;
+      }
+    }
   }
-  
+}

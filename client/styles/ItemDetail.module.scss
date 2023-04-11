@@ -1,0 +1,102 @@
+.container {
+  .breadcrumb {
+    padding: 0 15em;
+    margin-bottom: 16px;
+  }
+
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 0 14em;
+
+    .pictureDetails {
+      display: flex;
+      flex-direction: row;
+
+      .imageContainer {
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        img {
+          margin-left: 16px;
+          width: 680px;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .infoContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 48px;
+        width: 100%;
+
+        .condition {
+          color: #999;
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+
+        .title {
+          color: #333;
+          font-size: 28px;
+          font-weight: 600;
+          margin-bottom: 24px;
+          text-align: center;
+        }
+
+        .price {
+          color: #333;
+          font-size: 46px;
+          font-weight: 600;
+          margin-bottom: 48px;
+        }
+
+        .buyButton {
+          background-color: #ffe600;
+          border: none;
+          border-radius: 4px;
+          color: #333;
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 600;
+          padding: 12px 24px;
+          text-align: center;
+          text-decoration: none;
+          transition: background-color 0.2s;
+
+          &:hover {
+            background-color: #ffc900;
+          }
+        }
+      }
+    }
+
+    .descriptionContainer {
+      margin-top: 48px;
+      width: 100%;
+
+      .descriptionTitle {
+        color: #333;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+
+      .description {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 48px;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

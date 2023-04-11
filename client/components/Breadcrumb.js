@@ -6,8 +6,8 @@ export default function Breadcrumb({categories}) {
       {categories?.map((item, index) => {
         return (
           <div key={index}>
-            <span>{item}</span>
-            {index < categories.length - 1 && <span> &gt; </span>}
+            <span className={styles.span}>{item}</span>
+            {index < categories.length - 1 && <span className={styles.span}> &gt; </span>}
           </div>
         );
       })}
