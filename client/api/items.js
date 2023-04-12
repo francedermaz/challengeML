@@ -3,7 +3,7 @@ import axios from "axios";
 async function searchHandler(searchTerm) {
   try {
     const response = await axios.get(
-      `http://localhost:3001/api/items?q=${searchTerm}`
+      `${process.env.NEXT_PUBLIC_API_URL}items?q=${searchTerm}`
     );
     return response.data;
   } catch (error) {
@@ -15,7 +15,7 @@ async function searchHandler(searchTerm) {
 async function getItemDetails(id) {
   try {
     const response = await axios.get(
-      `http://localhost:3001/api/items/${id}`
+      `${process.env.NEXT_PUBLIC_API_URL}items/${id}`
     );
     return response.data;
   } catch (error) {

@@ -30,7 +30,7 @@
           position: relative;
 
           input {
-            width: 600px;
+            width: 890px;
             height: 36px;
             border: none;
             border-radius: 3px;
@@ -66,5 +66,17 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav ul li form .search input {
+    width: 35em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav ul li form .search input {
+    width: 17em;
   }
 }

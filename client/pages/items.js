@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
 import styles from "../styles/Items.module.scss";
 import Card from "../components/Card";
+import Head from "next/head";
 
 export default function Items() {
   const router = useRouter();
@@ -33,21 +34,32 @@ export default function Items() {
   }, []);
 
   return (
-    <div className={styles.content}>
-      <Breadcrumb categories={categories} />
-      <ul className={styles.results}>
-        {searchResults?.items?.slice(0, 4).map((item) => (
-          <Card
-            id={item.id}
-            key={item.id}
-            title={item.title}
-            price={item.price}
-            picture={item.picture}
-            location={item.location}
-            freeShipping={item.free_shipping}
-          />
-        ))}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>{`Resultados de búsqueda para ${searchQuery}`}</title>
+        <meta
+          name="description"
+          content={`Resultados de búsqueda para ${searchQuery}`}
+        />
+      </Head>
+      <div className={styles.content}>
+        <ul className={styles.results}>
+          <div className={styles.breadcrumb}>
+            <Breadcrumb categories={categories} />
+          </div>
+          {searchResults?.items?.slice(0, 4).map((item) => (
+            <Card
+              id={item.id}
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              picture={item.picture}
+              location={item.location}
+              freeShipping={item.free_shipping}
+            />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }

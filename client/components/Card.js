@@ -1,7 +1,14 @@
 import Link from "next/link";
 import styles from "../styles/Card.module.scss";
 
-export default function Card({ id, title, price, picture, location, freeShipping }) {
+export default function Card({
+  id,
+  title,
+  price,
+  picture,
+  location,
+  freeShipping,
+}) {
   return (
     <Link href={`/items/${id}`}>
       <div className={styles.card}>
@@ -11,10 +18,13 @@ export default function Card({ id, title, price, picture, location, freeShipping
         <div className={styles.detailsContainer}>
           <div className={styles.priceNameContainer}>
             <div className={styles.priceContainer}>
-              <span className={styles.amount}>$ {price.amount}</span>
-              {/* {price.decimals > 0 && (
-              <span className={styles.decimals}>{price.decimals}</span>
-            )} */}
+              <span className={styles.amount}>
+                ${" "}
+                {price.amount.toLocaleString("es-AR", {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
               {freeShipping && (
                 <div className={styles.freeShippingIconContainer}>
                   <img

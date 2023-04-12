@@ -4,8 +4,8 @@
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
   display: flex;
   height: 100%;
+  width: 60em;
   overflow: hidden;
-  width: 100%;
   border-bottom: 1px solid rgb(224, 224, 224);
 
   .imageContainer {
@@ -23,7 +23,7 @@
   .detailsContainer {
     display: flex;
     flex-direction: row;
-    gap: 3em;
+    gap: 10em;
     padding-top: 2.25em;
 
     .title {
@@ -35,7 +35,7 @@
     }
 
     .priceNameContainer {
-      width: 20em;
+      width: 28em;
       .priceContainer {
         display: flex;
         flex-direction: row;
@@ -81,11 +81,70 @@
         }
       }
     }
-    .shipping{
-      .location{
-        min-width: 5em;
+    .shipping {
+      .location {
+        padding-right: 2.5em;
         font-size: 12px;
         color: #666666;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 43.75em;
+
+    .imageContainer {
+      width: 8em;
+
+      img {
+        width: 8em;
+        height: 8em;
+      }
+    }
+
+    .detailsContainer {
+      .priceNameContainer {
+        width: 15em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 23.5em;
+
+    .imageContainer {
+      width: 6em;
+
+      img {
+        width: 6em;
+        height: 6em;
+      }
+    }
+
+    .detailsContainer {
+      padding-top: 1em;
+      gap: 0px;
+      .priceNameContainer {
+        width: 10em;
+        .priceContainer {
+          .amount {
+            font-size: 1.25em;
+          }
+        }
+        .title {
+          margin-top: 5px;
+          font-size: 1em;
+        }
+      }
+
+      .shipping {
+        .location {
+          padding-right: 0px;
+        }
       }
     }
   }
